@@ -23,6 +23,7 @@ def call(String name = 'human') {
   def build = job.getBuildByNumber(env.BUILD_ID as int)
   def userId = build.getCause(Cause.UserIdCause).getUserId()
   def user = User.current()
+  println(" ----------------- Output 2 ---------------");
   println(user);
   println(userId);
   println(job);
