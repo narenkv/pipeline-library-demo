@@ -49,7 +49,7 @@ def call(String name = 'human') {
   def jobprop = jobobj.getProperty(AuthorizationMatrixProperty.class)
   def currPermissionSet = jobprop.getGrantedPermissions();
   
-   Map<hudson.security.Permission,Set<String>>  gp = autToUpdate.getGrantedPermissions();
+   Map<hudson.security.Permission,Set<String>>  gp = jobprop.getGrantedPermissions();
    //println(gp);
   
    gp.each{ us ->
