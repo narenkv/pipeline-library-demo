@@ -3,7 +3,7 @@
 import hudson.model.User
 import hudson.security.Permission
 
-def call() {
+def call(String name = 'human') {
   
   def inst = Jenkins.getInstanceOrNull()
   def strategy = inst.getAuthorizationStrategy()
