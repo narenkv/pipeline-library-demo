@@ -28,6 +28,6 @@ def call(String name = 'human') {
   println(userId);
   println(job);
   
-  def user2 = User.current().getId()
+  def user2 = User.current().getFullName()
    println(user2);
 }
