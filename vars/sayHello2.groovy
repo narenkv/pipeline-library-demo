@@ -49,8 +49,8 @@ def call(String name = 'human') {
   def autToUpdate = jobToUpdate.getProperty(AuthorizationMatrixProperty.class)
   def currPermissionSet = autToUpdate.getGrantedPermissions()
   
-  AuthorizationMatrixProperty property = (AuthorizationMatrixProperty) currPermissionSet.get(0);
-   println(property);
+   Map<hudson.security.Permission,Set<String>>  autToUpdate.getGrantedPermissions();
+   println(gp);
   //GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
   
   println(currPermissionSet );
