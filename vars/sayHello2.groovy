@@ -47,9 +47,9 @@ def call(String name = 'human') {
   def jobToAddPermissions = "script-job"
   def jobToUpdate = jen.getItem(jobToAddPermissions);
   def autToUpdate = jobToUpdate.getProperty(AuthorizationMatrixProperty.class)
-  def currPermissionSet = autToUpdate.getGrantedPermissions()
+  def currPermissionSet = autToUpdate.getGrantedPermissions();
   
-   Map<hudson.security.Permission,Set<String>>  autToUpdate.getGrantedPermissions();
+   Map<hudson.security.Permission,Set<String>>  gp = autToUpdate.getGrantedPermissions();
    println(gp);
   //GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
   
