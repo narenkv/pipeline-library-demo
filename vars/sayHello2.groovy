@@ -50,7 +50,7 @@ def call(String name = 'human') {
   def currPermissionSet = autToUpdate.getGrantedPermissions()
   
   
-  GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
+  //GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
   
-  println(proj);
+  println(currPermissionSet );
 }
