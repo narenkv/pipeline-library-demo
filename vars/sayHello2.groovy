@@ -16,7 +16,7 @@ import hudson.scm.*
 
 
 def call(String name = 'human') {
-  
+  /*
   def inst = Jenkins.getInstanceOrNull()
   def strategy = inst.getAuthorizationStrategy()
   strategy.getMetaPropertyValues().find { it.getName() == 'grantedPermissions'}.each {
@@ -26,7 +26,7 @@ def call(String name = 'human') {
       print(it.value[Permission.HUDSON_ADMINISTER])
   }
   
-  def job = Jenkins.getInstance().getItemByFullName(env.JOB_BASE_NAME, Job.class)
+ def job = Jenkins.getInstance().getItemByFullName(env.JOB_BASE_NAME, Job.class)
   def build = job.getBuildByNumber(env.BUILD_ID as int)
   def userId = build.getCause(Cause.UserIdCause).getUserId()
   def user = User.current()
@@ -34,12 +34,15 @@ def call(String name = 'human') {
   println(user);
   println(userId);
   println(job);
-   
+ 
+ */
   def user2 = currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
    println(user2);
   
   
  def proj = Hudson.instance.getItem("script-job")
+  
+  
   //AuthorizationMatrixProperty authProperty = proj.getProperty(hudson.security.AuthorizationMatrixProperty)
   
   
