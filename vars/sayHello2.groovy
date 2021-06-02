@@ -50,10 +50,13 @@ def call(String name = 'human') {
   def currPermissionSet = jobprop.getGrantedPermissions();
   
    Map<hudson.security.Permission,Set<String>>  gp = jobprop.getGrantedPermissions();
+   
    //println(gp);
   
    gp.each{ us ->
           println(us);
+     println us.getClass();
+  
    }
   //GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
   
