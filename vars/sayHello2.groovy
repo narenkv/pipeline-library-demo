@@ -44,8 +44,8 @@ def call(String name = 'human') {
   
   
   def jen = Jenkins.getInstance();
-  def job = "script-job"
-  def jobobj = jen.getItem(job);
+  def jobname = "script-job"
+  def jobobj = jen.getItem(jobname);
   def jobprop = jobobj.getProperty(AuthorizationMatrixProperty.class)
   def currPermissionSet = jobprop.getGrantedPermissions();
   
