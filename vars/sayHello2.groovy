@@ -52,9 +52,8 @@ def call(String name = 'human') {
    Map<hudson.security.Permission,Set<String>>  gp = autToUpdate.getGrantedPermissions();
    println(gp);
   
-   gp.get(hudson.security.Permission.fromId("hudson.plugins.promoted_builds.Promotion")).each{ us ->
-         User usr = User.getById(us,false);
-         println(us);
+   gp.get(hudson.security.Permission.fromId("hudson.model.Item.Configure")).each{ us ->
+          println(us);
      
    }
   //GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
