@@ -50,12 +50,10 @@ def call(String name = 'human') {
   def currPermissionSet = autToUpdate.getGrantedPermissions();
   
    Map<hudson.security.Permission,Set<String>>  gp = autToUpdate.getGrantedPermissions();
-   println(gp);
+   //println(gp);
   
    gp.each{ us ->
           println(us);
-          println("hello ---> ")
-     
    }
   //GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
   
