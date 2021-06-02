@@ -52,7 +52,7 @@ def call(String name = 'human') {
    Map<hudson.security.Permission,Set<String>>  gp = autToUpdate.getGrantedPermissions();
    println(gp);
   
-   gp.get(hudson.security.Permission.fromId("hudson.model.Item.Configure")).each{ us ->
+   gp.get(hudson.security.Permission).each{ us ->
           println(us);
      
    }
