@@ -27,7 +27,10 @@ def call(String name = 'human') {
   println(user);
   println(userId);
   println(job);
-  
+   
   def user2 = currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
    println(user2);
+  
+  def userinfo = User.global_permissions
+  println(userinfo);
 }
