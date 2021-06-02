@@ -35,5 +35,13 @@ def call(String name = 'human') {
  def proj = Hudson.instance.getItem("script-job")
   //AuthorizationMatrixProperty authProperty = proj.getProperty(hudson.security.AuthorizationMatrixProperty)
   
+  
+  def jen = Jenkins.getInstance();
+  def jobToAddPermissions = "script-job"
+  def jobToUpdate = jen.getItem(jobToAddPermissions);
+  def autToUpdate = jobToUpdate.getProperty(AuthorizationMatrixProperty.class)
+  def currPermissionSet = autToUpdate.getGrantedPermissions()
+  
+  
   println(proj);
 }
