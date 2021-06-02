@@ -44,10 +44,10 @@ def call(String name = 'human') {
   
   
   def jen = Jenkins.getInstance();
-  def jobToAddPermissions = "script-job"
-  def jobToUpdate = jen.getItem(jobToAddPermissions);
-  def autToUpdate = jobToUpdate.getProperty(AuthorizationMatrixProperty.class)
-  def currPermissionSet = autToUpdate.getGrantedPermissions();
+  def job = "script-job"
+  def jobobj = jen.getItem(job);
+  def jobprop = jobobj.getProperty(AuthorizationMatrixProperty.class)
+  def currPermissionSet = jobprop.getGrantedPermissions();
   
    Map<hudson.security.Permission,Set<String>>  gp = autToUpdate.getGrantedPermissions();
    //println(gp);
