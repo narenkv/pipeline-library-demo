@@ -40,14 +40,16 @@ def call(String name = 'human') {
    println("Logged User : - "+user2);
   
   
- def proj = Hudson.instance.getItem("script-job")
-  
+ //def proj = Hudson.instance.getItem("script-job")
+  //def proj = Jenkins.getInstance().getItemByFullName(env.JOB_BASE_NAME, Job.class)
   
   //AuthorizationMatrixProperty authProperty = proj.getProperty(hudson.security.AuthorizationMatrixProperty)
   
   
   def jen = Jenkins.getInstance();
-  def jobname = "script-job"
+  //def jobname = "script-job"
+  def jobname = env.JOB_BASE_NAME
+  println(" Job : " + jobname)
   def jobobj = jen.getItem(jobname);
   def jobprop = jobobj.getProperty(AuthorizationMatrixProperty.class)
   def currPermissionSet = jobprop.getGrantedPermissions();
