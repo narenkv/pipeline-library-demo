@@ -28,6 +28,6 @@ def call(String name = 'human') {
   println(userId);
   println(job);
   
-  def user2 = User.current().getFullName()
+  def user2 = currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
    println(user2);
 }
