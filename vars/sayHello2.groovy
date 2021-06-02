@@ -37,7 +37,7 @@ def call(String name = 'human') {
  
  */
   def user2 = currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
-   println(user2);
+   println("Logged User : - "+user2);
   
   
  def proj = Hudson.instance.getItem("script-job")
