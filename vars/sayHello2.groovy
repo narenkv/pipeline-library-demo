@@ -3,6 +3,11 @@
 import hudson.model.User
 import hudson.security.Permission
 
+import hudson.model.*
+
+
+
+
 def call(String name = 'human') {
   
   def inst = Jenkins.getInstanceOrNull()
@@ -13,5 +18,13 @@ def call(String name = 'human') {
       print(it.value[Permission.WRITE])
       print(it.value[Permission.HUDSON_ADMINISTER])
   }
+  
+  def job = Jenkins.getInstance().getItemByFullName(env.JOB_BASE_NAME, Job.class)
+  def build = job.getBuildByNumber(env.BUILD_ID as int)
+  def userId = build.getCause(Cause.UserIdCause).getUserId()
+  def user = User.current()
+  println(user);
+  println(userId);
+  println(job);
   
 }
