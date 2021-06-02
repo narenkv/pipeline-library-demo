@@ -4,7 +4,14 @@ import hudson.model.User
 import hudson.security.Permission
 
 import hudson.model.*
+  
+import jenkins.model.*
 
+import hudson.security.*
+
+import com.cloudbees.plugins.*
+
+import hudson.scm.*
 
 
 
