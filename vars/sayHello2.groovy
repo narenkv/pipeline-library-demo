@@ -54,6 +54,7 @@ def call(String name = 'human') {
   
    gp.get(hudson.security.Permission).each{ us ->
           println(us);
+          println("hello ---> ")
      
    }
   //GlobalMatrixAuthorizationStrategy auth = new GlobalMatrixAuthorizationStrategy();
