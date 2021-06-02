@@ -32,8 +32,8 @@ def call(String name = 'human') {
    println(user2);
   
   
-  AbstractProject proj = Hudson.instance.getItem("script-job")
+ def proj = Hudson.instance.getItem("script-job")
   //AuthorizationMatrixProperty authProperty = proj.getProperty(hudson.security.AuthorizationMatrixProperty)
   
-  //println(proj);
+  println(proj);
 }
