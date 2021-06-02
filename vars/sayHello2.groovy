@@ -31,6 +31,9 @@ def call(String name = 'human') {
   def user2 = currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
    println(user2);
   
-  def userinfo = User.global_permissions
-  println(userinfo);
+  
+  AbstractProject proj = Hudson.instance.getItem("script")
+ AuthorizationMatrixProperty authProperty = proj.getProperty(hudson.security.AuthorizationMatrixProperty)
+  
+  println(authProperty);
 }
