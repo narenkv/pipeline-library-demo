@@ -12,6 +12,27 @@ import hudson.security.*
 import com.cloudbees.plugins.*
 
 import hudson.scm.*
+  
+import hudson.security.PermissionGroup;
+import hudson.security.Permission;
+import hudson.security.PermissionScope;
+
+public class MyPlugin extends Plugin
+{
+    // create permission group
+    private static final PermissionGroup pg =
+      new PermissionGroup( MyPlugin.class,
+                           Messages._MyPermissionGroupTitle() // This is the column title
+                         );
+
+    // setup permission in that group
+    public static final Permission perm =
+        new Permission( pg,
+                        "MyPermission",
+                        Messages._MyPermissionDescription(),
+                        Jenkins.ADMINISTER
+                      );
+}
 
 
 
